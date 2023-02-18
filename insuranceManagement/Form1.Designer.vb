@@ -37,6 +37,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtaac = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnshowpo = New System.Windows.Forms.Button()
         Me.btnpos = New System.Windows.Forms.Button()
         Me.btnpou = New System.Windows.Forms.Button()
         Me.lll = New System.Windows.Forms.Label()
@@ -53,10 +54,11 @@ Partial Class Form1
         Me.txtpcn = New System.Windows.Forms.TextBox()
         Me.txtpac = New System.Windows.Forms.TextBox()
         Me.ll = New System.Windows.Forms.Label()
-        Me.btnq2 = New System.Windows.Forms.Button()
         Me.btnshow = New System.Windows.Forms.Button()
         Me.btnq1 = New System.Windows.Forms.Button()
-        Me.btnshowpo = New System.Windows.Forms.Button()
+        Me.agt_name = New System.Windows.Forms.ComboBox()
+        Me.ttlamt = New System.Windows.Forms.Label()
+        Me.lab1 = New System.Windows.Forms.Label()
         CType(Me.GridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -198,6 +200,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnshowpo)
         Me.GroupBox2.Controls.Add(Me.btnpos)
         Me.GroupBox2.Controls.Add(Me.btnpou)
         Me.GroupBox2.Controls.Add(Me.lll)
@@ -214,12 +217,21 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.txtpcn)
         Me.GroupBox2.Controls.Add(Me.txtpac)
         Me.GroupBox2.Controls.Add(Me.ll)
-        Me.GroupBox2.Location = New System.Drawing.Point(285, 57)
+        Me.GroupBox2.Location = New System.Drawing.Point(285, 49)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(500, 157)
         Me.GroupBox2.TabIndex = 3
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Policy master"
+        '
+        'btnshowpo
+        '
+        Me.btnshowpo.Location = New System.Drawing.Point(404, 118)
+        Me.btnshowpo.Name = "btnshowpo"
+        Me.btnshowpo.Size = New System.Drawing.Size(90, 23)
+        Me.btnshowpo.TabIndex = 18
+        Me.btnshowpo.Text = "Show"
+        Me.btnshowpo.UseVisualStyleBackColor = True
         '
         'btnpos
         '
@@ -353,24 +365,13 @@ Partial Class Form1
         Me.ll.TabIndex = 10
         Me.ll.Text = "Agent code"
         '
-        'btnq2
-        '
-        Me.btnq2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btnq2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnq2.Location = New System.Drawing.Point(639, 220)
-        Me.btnq2.Name = "btnq2"
-        Me.btnq2.Size = New System.Drawing.Size(146, 23)
-        Me.btnq2.TabIndex = 22
-        Me.btnq2.Text = "Query 2"
-        Me.btnq2.UseVisualStyleBackColor = False
-        '
         'btnshow
         '
         Me.btnshow.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnshow.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnshow.Location = New System.Drawing.Point(285, 219)
+        Me.btnshow.Location = New System.Drawing.Point(285, 218)
         Me.btnshow.Name = "btnshow"
-        Me.btnshow.Size = New System.Drawing.Size(146, 23)
+        Me.btnshow.Size = New System.Drawing.Size(100, 23)
         Me.btnshow.TabIndex = 23
         Me.btnshow.Text = "Show all"
         Me.btnshow.UseVisualStyleBackColor = False
@@ -379,31 +380,50 @@ Partial Class Form1
         '
         Me.btnq1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.btnq1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnq1.Location = New System.Drawing.Point(462, 219)
+        Me.btnq1.Location = New System.Drawing.Point(395, 218)
         Me.btnq1.Name = "btnq1"
-        Me.btnq1.Size = New System.Drawing.Size(146, 23)
+        Me.btnq1.Size = New System.Drawing.Size(100, 23)
         Me.btnq1.TabIndex = 24
         Me.btnq1.Text = "Query 1"
         Me.btnq1.UseVisualStyleBackColor = False
         '
-        'btnshowpo
+        'agt_name
         '
-        Me.btnshowpo.Location = New System.Drawing.Point(689, 175)
-        Me.btnshowpo.Name = "btnshowpo"
-        Me.btnshowpo.Size = New System.Drawing.Size(90, 23)
-        Me.btnshowpo.TabIndex = 18
-        Me.btnshowpo.Text = "Show"
-        Me.btnshowpo.UseVisualStyleBackColor = True
+        Me.agt_name.FormattingEnabled = True
+        Me.agt_name.Location = New System.Drawing.Point(501, 218)
+        Me.agt_name.Name = "agt_name"
+        Me.agt_name.Size = New System.Drawing.Size(156, 23)
+        Me.agt_name.TabIndex = 25
+        '
+        'ttlamt
+        '
+        Me.ttlamt.AutoSize = True
+        Me.ttlamt.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.ttlamt.ForeColor = System.Drawing.Color.SeaGreen
+        Me.ttlamt.Location = New System.Drawing.Point(673, 225)
+        Me.ttlamt.Name = "ttlamt"
+        Me.ttlamt.Size = New System.Drawing.Size(0, 21)
+        Me.ttlamt.TabIndex = 26
+        '
+        'lab1
+        '
+        Me.lab1.AutoSize = True
+        Me.lab1.Location = New System.Drawing.Point(673, 209)
+        Me.lab1.Name = "lab1"
+        Me.lab1.Size = New System.Drawing.Size(112, 15)
+        Me.lab1.TabIndex = 27
+        Me.lab1.Text = "Total policy amount"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.btnshowpo)
+        Me.Controls.Add(Me.lab1)
+        Me.Controls.Add(Me.ttlamt)
+        Me.Controls.Add(Me.agt_name)
         Me.Controls.Add(Me.btnq1)
         Me.Controls.Add(Me.btnshow)
-        Me.Controls.Add(Me.btnq2)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
@@ -445,7 +465,6 @@ Partial Class Form1
     Friend WithEvents txtped As TextBox
     Friend WithEvents ljl As Label
     Friend WithEvents btnpod As Button
-    Friend WithEvents btnq2 As Button
     Friend WithEvents btnagd As Button
     Friend WithEvents btnagu As Button
     Friend WithEvents btnpou As Button
@@ -455,4 +474,7 @@ Partial Class Form1
     Friend WithEvents btnq1 As Button
     Friend WithEvents btnshowag As Button
     Friend WithEvents btnshowpo As Button
+    Friend WithEvents agt_name As ComboBox
+    Friend WithEvents ttlamt As Label
+    Friend WithEvents lab1 As Label
 End Class
